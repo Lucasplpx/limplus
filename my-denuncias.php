@@ -41,7 +41,7 @@
             <td><?php echo  date_format(new DateTime($denuncia['data_denuncia']), 'd/m/Y H:i:s'); ?></td>
             <td>
             <a href="editar-denuncia.php?id=<?php echo $denuncia['id'];?>" class="btn btn-outline-primary">Editar</a>
-            <a href="excluir-denuncia.php?id=<?php echo $denuncia['id'];?>" class="btn btn-outline-danger">Excluir</a>
+            <a onclick="return confirm('Deseja excluir?')" href="excluir-denuncia.php?id=<?php echo $denuncia['id'];?>" class="btn btn-outline-danger">Excluir</a>
             </td>
         </tr>
         <?php
