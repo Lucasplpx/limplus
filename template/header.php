@@ -9,8 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/upload.css">
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/upload.js"></script>
     <script src="assets/js/script.js"></script>
     <title>LimPlus</title>
 </head>

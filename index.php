@@ -9,7 +9,7 @@ $total_usuarios = 321;
 ?>
     <div class="container-fluid">
         <div class="jumbotron">
-            <h2>Nós temos hoje <?php echo $total_denuncia; ?> denuncias.</h2>
+            <h2>Você já registrou <?php echo $total_denuncia; ?> denuncias.</h2>
             <p>E mais de <?php echo $total_usuarios; ?>  usuários cadastrados.</p>
         </div>
     

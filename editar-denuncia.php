@@ -64,7 +64,16 @@
 
         <div class="form-group">
             <label for="add_foto">Fotos da Denuncia:</label><br>
-            <input type="file" name="fotos[]" multiple /> <br><br>
+             <!-- Começo do codigo -->
+            <p>Utilize a tecla <b>Ctrl</b> para selecionar mais de um arquivo.</p>
+                <div id="multiple_upload">
+                    <input type="file" name="fotos[]" multiple="multiple" id="uploadChange" />
+                    <div id="message">Selecionar fotos</div>
+                    <input type="button" id="botao" value="Upload" />
+                <div id="lista">
+                </div>
+            </div>
+            <!-- Fim do codigo -->
             
         <div class="card">
             <div class="card-header">
