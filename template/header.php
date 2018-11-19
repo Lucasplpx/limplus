@@ -34,7 +34,7 @@
     <ul class="navbar-nav">
     <?php if(isset($_SESSION['cLogin']) && !empty($_SESSION['cLogin'])): ?>
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Usuário -> <?php include 'class/usuarios.class.php'; $u = new Usuario; $nome = $u->getNomeUsuario($_SESSION['cLogin']); echo $nome; ?> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php"><span class="badge badge-pill badge-light">Online: <?php include 'class/usuarios.class.php'; $u = new Usuario; $nome = $u->getNomeUsuario($_SESSION['cLogin']); echo $nome; ?></span> <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">

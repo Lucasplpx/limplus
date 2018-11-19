@@ -8,10 +8,16 @@
     }
 ?>
 <div class="container">
-    <h1>Minhas Denuncias</h1>
 
+
+  
+    <h1 style="text-align: center;">Minhas Denuncias</h1> 
+    
+ 
     <a href="add-denuncia.php" class="btn btn-outline-dark">Adicionar Denuncia</a>
+    
 
+    <div class="table-responsive-sm">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -48,7 +54,7 @@
         endforeach;
         ?>
     </table>
-
+    </div>
 </div>
 
 
