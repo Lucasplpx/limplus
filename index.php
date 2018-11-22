@@ -1,27 +1,48 @@
 <?php include 'template/header.php'?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<?php
-include 'class/denuncias.class.php';
-$a = new Denuncia();
+<head>
+    <meta charset="UTF-8">
+    <title>LimpPlus</title>
+    <link rel="stylesheet" href="assets/css/estiloLandingPage.css" />
+</head>
 
-$total_denuncia = $a->getTotalDenuncia();
-$total_usuarios = 321;
-?>
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <h2>O sistema consta com <?php echo $total_denuncia; ?> denuncias atendidas.</h2>
-            <p>E mais de <?php echo $total_usuarios; ?>  usuários cadastrados.</p>
-        </div>
+<body>
     
-        <div class="row">
-            <div class="col-sm-3">
-                <h4>Pesquisa Avançada</h4>
-            </div>
-            <div class="col-sm-9">
-                <h4>Últimos Anúncios</h4>
-            </div>
+<div class="container" style="margin-top: 100px;">
+
+
+<div class="row">
+    <div class="col-8">
+        <img src="assets/img/img1.PNG" class="img-fluid" alt="Responsive image">
+    </div>
+
+
+    <div class="col">
+        <div style="text-align: center;">
+            <h1>Realize o teste de nosso aplicativo através do cadastramento!!</h1>
+
+            <a href="cadastre-se.php">
+                <img src="assets/img/click.png" width="300" height="80" /></a>
+            </a>
+        </div>
+
+        <div id="rodape">
+
+
+            &copy;Copyright by Limplus Team
+            <a href="mailto:limplus@gmail.com" target="_blank">
+                <img src="assets/img/tela/email.png" width="30" height="20" /></a>
+
+
         </div>
 
     </div>
+</div>
 
-<?php include 'template/footer.php'?>
+
+</div>
+</body>
+
+</html>
