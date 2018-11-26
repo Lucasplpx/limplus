@@ -86,6 +86,104 @@ class Denuncia{
             }
         }
 
+
+        //Consultar URL para pegar as imagens usado no For da linha 161
+        $lista = array();
+
+        $sql = $pdo->prepare("SELECT url
+        FROM denuncias_imagens di
+        INNER JOIN denuncias d ON di.id_denuncia = d.id WHERE d.id_usuario = :id_user");
+        $sql->bindValue(":id_user", $_SESSION['cLogin']);
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $lista = $sql->fetchAll();
+        }
+        /*
+        var_dump($lista);
+
+        for ($i=0; $i < count($lista); $i++) { 
+          echo "Meus dados: ". $lista[$i]['url'];
+        }
+
+        exit;
+
+        */
+
+            ##Começo para enviar para o e-mail
+                                    
+                                 
+
+            require 'PHPMailer/PHPMailerAutoload.php';
+	
+            $Mailer = new PHPMailer();
+            
+            //Define que será usado SMTP
+            $Mailer->IsSMTP();
+            
+            //Enviar e-mail em HTML
+            $Mailer->isHTML(true);
+            
+            //Aceitar carasteres especiais
+            $Mailer->Charset = 'UTF-8';
+            
+            //Configurações
+            $Mailer->SMTPAuth = true;
+            $Mailer->SMTPSecure = 'ssl';
+            
+            //nome do servidor
+            $Mailer->Host = 'br968.hostgator.com.br';
+            //Porta de saida de e-mail 
+            $Mailer->Port = 465;
+            
+            //Dados do e-mail de saida - autenticação
+            $Mailer->Username = 'adm@lucasplpx.com.br';
+            $Mailer->Password = 'F)p3.(b;Ns{1';
+            
+            //E-mail remetente (deve ser o mesmo de quem fez a autenticação)
+            $Mailer->From = 'adm@lucasplpx.com.br';
+            
+            //Nome do Remetente
+            $Mailer->FromName = 'Lucas Passos';
+            
+            //Assunto da mensagem
+            $Mailer->Subject = 'Denuncia do '.$bairro;
+            
+            //Type of email
+            $Mailer->isHTML(true);
+
+            //Corpo da Mensagem
+            $Mailer->Body = "Local: ".$bairro."<br/>"."Cep: ".$cep."<br/>"."Descricao: ".$descricao;
+            
+            //Corpo da mensagem em texto
+            $Mailer->AltBody = 'conteudo do E-mail em texto';
+
+            //Envia os anexos/As imagens
+            for($i=0; $i < count($lista); $i++) { 
+                $Mailer->AddAttachment('assets/img/denuncias/'. $lista[$i]['url']);
+            }
+            
+
+            //Destinatario 
+            $Mailer->AddAddress('limplus20@gmail.com');
+            
+            if($Mailer->Send()){
+                echo "
+                <div class='alert alert-success'>
+                <strong>
+                E-mail enviado com sucesso 
+                </strong>
+                <a href='my-denuncias.php' class='alert-link'>Verifique suas denuncias !</a>
+                </div>
+                ";
+                exit;
+            }else{
+                echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
+                exit;
+            }
+
+            ##Fim de enviar para o e-mail
+
     }
 
 

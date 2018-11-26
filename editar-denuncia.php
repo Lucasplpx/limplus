@@ -52,8 +52,12 @@
                                     }else{
                                         $fotos = array();
                                     }  
+
+                                
                                     
                                     $a->editDenuncia($bairro, $cep, $descricao, $fotos, $id);
+
+                                    
                             
                                     ?>
                                         <div class="alert alert-success">
